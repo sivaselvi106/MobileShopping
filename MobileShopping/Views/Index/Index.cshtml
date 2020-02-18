@@ -4,8 +4,9 @@
 }
 
 
-@Html.ActionLink("Create new mobile", "Create")<br />
-@if(TempData["Message"] != null)
+@Html.ActionLink("Create new mobile", "Create")
+<br />
+@if (TempData["Message"] != null)
 {
     @Html.Label((string)TempData["Message"])
 }
@@ -13,21 +14,23 @@
     <tr>
         <th>BrandName</th>
         <th>Id</th>
-        <th>Model</th>
+        <th>MobileModel</th>
         <th>Color</th>
         <th>Price</th>
         <th>Action</th>
     </tr>
-    @foreach(MobileShopping.entity.Mobile mobile in Model)
+    @foreach (MobileShopping.entity.Mobile mobile in Model)
     {
-<tr>
-    <td>@mobile.BrandName</td>
-    <td>@mobile.Id</td>
-    <td>@mobile.Model</td>
-    <td>@mobile.Color</td>
-    <td>@mobile.Price</td>
-    <td>@Html.ActionLink("Edit /", "Edit", new { id = mobile.Id })
-    @Html.ActionLink("Delete", "Delete", new { id = mobile.Id })</td>
-</tr>
+        <tr>
+            <td>@mobile.BrandName</td>
+            <td>@mobile.Id</td>
+            <td>@mobile.MobileModel</td>
+            <td>@mobile.Color</td>
+            <td>@mobile.Price</td>
+            <td>
+                @Html.ActionLink("Edit /", "Edit", new { id = mobile.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = mobile.Id })
+            </td>
+        </tr>
     }
 </table>

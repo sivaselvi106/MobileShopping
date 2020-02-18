@@ -39,5 +39,18 @@ namespace MobileShopping.Controllers
             TempData["Message"] = "Mobile deleted successfully";
             return RedirectToAction("Index");
         }
+
+        public ActionResult Edit(int id)
+        {
+            Mobile mobile = mobileRepository.GetMobileId(id);
+            return View(mobile);
+        }
+        [HttpPost]
+        public  ActionResult Update(Mobile mobile)
+        { 
+                mobileRepository.UpdateMobile(mobile);
+                TempData["Message"] = "Updated successfully";
+                return RedirectToAction("Index");
+        }
     }
 }

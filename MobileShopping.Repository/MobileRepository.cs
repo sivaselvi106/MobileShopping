@@ -11,9 +11,9 @@ namespace MobileShopping.Repository
         public static List<Mobile> mobiles = new List<Mobile>();
         static MobileRepository()
         {
-            mobiles.Add(new Mobile { BrandName = "Samsung", Model = "A50", Id=1, Color = "Blue", Price = 15000 });
-            mobiles.Add(new Mobile { BrandName = "Redmi", Model = "Note5 Pro", Id = 2, Color = "White", Price = 10000 });
-            mobiles.Add(new Mobile { BrandName = "Moto", Model = "G4+", Id = 3, Color = "Blue", Price = 9000 });
+            mobiles.Add(new Mobile { BrandName = "Samsung", MobileModel = "A50", Id=1, Color = "Blue", Price = 15000 });
+            mobiles.Add(new Mobile { BrandName = "Redmi", MobileModel = "Note5 Pro", Id = 2, Color = "White", Price = 10000 });
+            mobiles.Add(new Mobile { BrandName = "Moto", MobileModel = "G4+", Id = 3, Color = "Blue", Price = 9000 });
         }
         public IEnumerable<Mobile> GetMobileDetails()
         {
@@ -29,9 +29,17 @@ namespace MobileShopping.Repository
         }
         public void DeleteMobile(int mobileId)
         {
-            Mobile list = GetMobileId(mobileId);
-            if (list != null)
-                mobiles.Remove(list);
+            Mobile mobile = GetMobileId(mobileId);
+            if (mobile != null)
+                mobiles.Remove(mobile);
+        }
+        public void UpdateMobile(Mobile mobile)
+        {
+            Mobile updateMobile = GetMobileId(mobile.Id);
+            updateMobile.BrandName = mobile.BrandName;
+            updateMobile.Color = mobile.Color;
+            updateMobile.MobileModel = mobile.MobileModel;
+            updateMobile.Price = mobile.Price;
         }
     }
 }
