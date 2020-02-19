@@ -1,0 +1,84 @@
+﻿@model Accounts.Entity.Account
+
+@{
+    ViewBag.Title = "SignUp";
+}
+<h2 style="text-align:center;">SignUp</h2>
+
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+{
+<table align="center";border-spacing ="0 15px";color="green";>
+    <tr>
+        <td>
+            UserName
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.UserName)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mail Id
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.MailId)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.Password)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Gender
+        </td>
+        <td>
+            @Html.RadioButtonFor(m => m.Gender, "Male")Male
+            @Html.RadioButtonFor(m => m.Gender, "Female")Female
+            @Html.RadioButtonFor(m => m.Gender, "Other")Others
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Age
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.Age)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mob No
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.MobileNo)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            City
+        </td>
+        <td>
+            @Html.DropDownList("City", new List<SelectListItem>
+       {
+             new SelectListItem{Text="Chennai",Value="1"},
+             new SelectListItem{Text="Coimbatore",Value="2"},
+             new SelectListItem{Text="Madurai",Value="3"},
+
+      }, "Select city")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="SignUp"/>
+        </td>
+        <td>
+            <a href="~/Account">Login</a>
+        </td>
+    </tr>
+</table>
+}

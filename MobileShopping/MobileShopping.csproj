@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -131,6 +132,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Index\Edit.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -143,6 +146,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Accounts.Entity\Accounts.Entity.csproj">
+      <Project>{a4c383ad-c5f3-4afe-8e6e-41cd3bea703c}</Project>
+      <Name>Accounts.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MobileShopping.entity\MobileShopping.entity.csproj">
       <Project>{37d593c6-292a-4f3b-817c-35c7c7a29b60}</Project>
       <Name>MobileShopping.entity</Name>

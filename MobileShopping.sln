@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileShopping.entity", "Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileShopping.Repository", "MobileShopping.Repository\MobileShopping.Repository.csproj", "{53D32695-BACF-4F1E-B63C-BA908AC93B47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounts.Entity", "Accounts.Entity\Accounts.Entity.csproj", "{A4C383AD-C5F3-4AFE-8E6E-41CD3BEA703C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{53D32695-BACF-4F1E-B63C-BA908AC93B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53D32695-BACF-4F1E-B63C-BA908AC93B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53D32695-BACF-4F1E-B63C-BA908AC93B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C383AD-C5F3-4AFE-8E6E-41CD3BEA703C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C383AD-C5F3-4AFE-8E6E-41CD3BEA703C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C383AD-C5F3-4AFE-8E6E-41CD3BEA703C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C383AD-C5F3-4AFE-8E6E-41CD3BEA703C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
