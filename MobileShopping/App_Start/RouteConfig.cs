@@ -15,7 +15,7 @@ namespace MobileShopping
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Index", action = "Create", id = UrlParameter.Optional }
             );
         }
     }

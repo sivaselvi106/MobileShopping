@@ -21,18 +21,44 @@ namespace MobileShopping.Controllers
             IEnumerable<Mobile> mobile = mobileRepository.GetMobileDetails();
             return View(mobile);
         }
+        [ActionName("Create")]
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Mobile mobile)
+        [ActionName("Create")]
+        //public ActionResult Create(Mobile mobile)
+        //{
+        //    mobileRepository.AddMobile(mobile);
+        //    TempData["Message"] = "Mobile added successfully!!!";
+        //    return RedirectToAction("Index");
+        //}
+        //public ActionResult Create_Post()
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Mobile mobile = new Mobile();
+        //        UpdateModel(mobile);
+        //        mobileRepository.AddMobile(mobile);
+        //        TempData["Message"] = "Mobile added successfully!!!";
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View();
+        //}
+        public ActionResult Create_Post()
         {
-
-            mobileRepository.AddMobile(mobile);
-            TempData["Message"] = "Mobile added successfully!!!";
-            return RedirectToAction("Index");
+            Mobile mobile = new Mobile();
+            TryUpdateModel(mobile);
+            if (ModelState.IsValid)
+            {
+                mobileRepository.AddMobile(mobile);
+                TempData["Message"] = "Mobile added successfully!!!";
+                return RedirectToAction("Index");
+            }
+            return View();
         }
+
         public ActionResult Delete(int id)
         {
             mobileRepository.DeleteMobile(id);
