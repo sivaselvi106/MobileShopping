@@ -8,11 +8,12 @@ namespace MobileShopping.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
+        [HttpPost]
         public ActionResult Login()
         {
             return View();
         }
+        [HttpPost]
         public ActionResult SignUp()
         {
             return View();

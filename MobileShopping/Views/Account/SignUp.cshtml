@@ -1,4 +1,4 @@
-﻿@model Accounts.Entity.Account
+﻿@model MobileShopping.entity.Account
 
 @{
     ViewBag.Title = "SignUp";
@@ -7,52 +7,54 @@
 
 @using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
 {
-    <table align="center";>
+    <table align="center" ;>
         <tr>
-            <td style="text-align:right";> @Html.LabelFor(model => model.UserName, new { @class = "col-md-2 control-label" })</td>
+            <td style="text-align:right" ;> @Html.LabelFor(model => model.UserName)</td>
 
             <td>
-                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
-                </td>
+                @Html.TextBoxFor(model => model.UserName)
+            </td>
             <td>
                 @Html.ValidationMessageFor(model => model.UserName)
             </td>
             @*<td>
-                    @Html.TextBox("UserName", null, new { @class = "form-control", data_val = "true", data_val_required = "LanguageKnown is required" })
-                    @Html.ValidationMessage("UserName", new { @class = "text-danger" })
+                    @Html.TextBox("UserName")
+                    @Html.ValidationMessage("UserName")
                 </td>*@
         </tr>
         <tr>
-            <td style="text-align:right";> @Html.LabelFor(model => model.MailId, new { @class = "col-md-2 control-label" })</td>
+            <td style="text-align:right" ;> @Html.LabelFor(model => model.MailId)</td>
 
             <td>
-                @Html.TextBoxFor(model => model.MailId, new { @class = "form-control" })</td>
+                @Html.TextBoxFor(model => model.MailId)
+            </td>
             <td>
                 @Html.ValidationMessageFor(model => model.MailId)
             </td>
             @*<td>@Html.LabelFor(Model => Model.MailId)</td>
                 <td>
-                    @Html.TextBox("MailId", null, new { @class = "form-control", data_val = "true", data_val_required = "EmailId is required" })
-                    @Html.ValidationMessage("MailId", new { @class = "text-danger" })
+                    @Html.TextBox("MailId")
+                    @Html.ValidationMessage("MailId")
                 </td>*@
         </tr>
         <tr>
         <tr>
-            <td style="text-align:right";> @Html.LabelFor(model => model.Password, new { @class = "col-md-2 control-label" })</td>
+            <td style="text-align:right" ;> @Html.LabelFor(model => model.Password)</td>
 
             <td>
-                @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })</td>
+                @Html.TextBoxFor(model => model.Password)
+            </td>
             <td>
                 @Html.ValidationMessageFor(model => model.Password)
             </td>
             @*<td>@Html.LabelFor(Model => Model.Password)</td>
                 <td>
-                    @Html.TextBox("Password", null, new { @class = "form-control", data_val = "true", data_val_required = "Password is required" })
-                    @Html.ValidationMessage("Password", new { @class = "text-danger" })
+                    @Html.TextBox("Password")
+                    @Html.ValidationMessage("Password")
                 </td>*@
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.Gender, new { @class = "col-md-2 control-label" })</td>
+            <td style="text-align:right" ;> @Html.LabelFor(model => model.Gender)</td>
             <td>
                 @Html.RadioButtonFor(m => m.Gender, "Male")Male
                 @Html.RadioButtonFor(m => m.Gender, "Female")Female
@@ -63,37 +65,37 @@
             </td>
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.Age, new { @class = "col-md-2 control-label" })</td>
+            <td> @Html.LabelFor(model => model.Age)</td>
 
             <td>
-                @Html.TextBoxFor(model => model.Age, new { @class = "form-control" })
-                </td>
+                @Html.TextBoxFor(model => model.Age)
+            </td>
             <td>
                 @Html.ValidationMessageFor(model => model.Age)
             </td>
             @*<td>@Html.LabelFor(Model => Model.Age)</td>
                 <td>
-                    @Html.TextBox("Age", null, new { @class = "form-control", data_val = "true", data_val_required = "Age is required" })
-                    @Html.ValidationMessage("Age", new { @class = "text-danger" })
+                    @Html.TextBox("Age")
+                    @Html.ValidationMessage("Age")
                 </td>*@
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.MobileNo, new { @class = "col-md-2 control-label" })</td>
+            <td style="text-align:right";> @Html.LabelFor(model => model.MobileNo)</td>
 
             <td>
-                @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control" })
-                </td>
+                @Html.TextBoxFor(model => model.MobileNo)
+            </td>
             <td>
                 @Html.ValidationMessageFor(model => model.MobileNo)
             </td>
             @*<td>@Html.LabelFor(Model => Model.MobileNo)</td>
                 <td>
-                    @Html.TextBox("MobileNo", null, new { @class = "form-control", data_val = "true", data_val_required = "Mob No is required" })
-                    @Html.ValidationMessage("MobileNo", new { @class = "text-danger" })
+                    @Html.TextBox("MobileNo")
+                    @Html.ValidationMessage("MobileNo")
                 </td>*@
         </tr>
         <tr>
-            <td> @Html.LabelFor(model => model.City, new { @class = "col-md-2 control-label" })</td>
+            <td style="text-align:right" ;> @Html.LabelFor(model => model.City)</td>
             <td>
                 @Html.DropDownList("City", new List<SelectListItem>
            {
@@ -116,9 +118,4 @@
             </td>
         </tr>
     </table>
-    @section Validation
-    {
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-    }
 }
